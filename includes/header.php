@@ -32,14 +32,13 @@ $currentPage = $currentPage ?? 'home';
     <nav class="navbar">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="/" class="logo"><?php echo SiteContent::getValue($db, 'home.header.brand', 'MAX1ON1'); ?><span>FITNESS</span></a>
+                <a href="/" class="logo"><?php echo SiteContent::getValue($db, 'header.brand', 'MAX1ON1'); ?><span>FITNESS</span></a>
 
                 <ul class="nav-menu">
-                    <li><a href="/" class="nav-link <?php echo $currentPage === 'home' ? 'active' : ''; ?>"><?php echo SiteContent::getValue($db, 'home.header.nav.home', 'Home'); ?></a></li>
-                    <li><a href="#products" class="nav-link"><?php echo SiteContent::getValue($db, 'home.header.nav.products', 'Products'); ?></a></li>
-                    <li><a href="#features" class="nav-link"><?php echo SiteContent::getValue($db, 'home.header.nav.features', 'Features'); ?></a></li>
-                    <li><a href="#about" class="nav-link"><?php echo SiteContent::getValue($db, 'home.header.nav.about', 'About'); ?></a></li>
-                    <li><a href="#contact" class="nav-link"><?php echo SiteContent::getValue($db, 'home.header.nav.contact', 'Contact'); ?></a></li>
+                    <li><a href="/" class="nav-link <?php echo $currentPage === 'home' ? 'active' : ''; ?>"><?php echo SiteContent::getValue($db, 'header.nav.home', 'Home'); ?></a></li>
+                    <li><a href="/about" class="nav-link <?php echo $currentPage === 'about' ? 'active' : ''; ?>"><?php echo SiteContent::getValue($db, 'header.nav.about', 'About'); ?></a></li>
+                    <li><a href="/partner" class="nav-link <?php echo $currentPage === 'partner' ? 'active' : ''; ?>"><?php echo SiteContent::getValue($db, 'header.nav.partner', 'Partner'); ?></a></li>
+                    <li><a href="/contact" class="nav-link <?php echo $currentPage === 'contact' ? 'active' : ''; ?>"><?php echo SiteContent::getValue($db, 'header.nav.contact', 'Contact'); ?></a></li>
                 </ul>
 
                 <div class="nav-actions">
@@ -50,8 +49,8 @@ $currentPage = $currentPage ?? 'home';
                         <?php endif; ?>
                         <a href="/logout" class="btn-outline">Logout</a>
                     <?php else: ?>
-                        <a href="/login" class="btn-outline"><?php echo SiteContent::getValue($db, 'home.header.login_button', 'Login'); ?></a>
-                        <a href="/signup" class="btn-gradient"><?php echo SiteContent::getValue($db, 'home.header.signup_button', 'Get Started'); ?></a>
+                        <a href="/login" class="btn-outline"><?php echo SiteContent::getValue($db, 'header.login_button', 'Login'); ?></a>
+                        <a href="/signup" class="btn-gradient"><?php echo SiteContent::getValue($db, 'header.signup_button', 'Get Started'); ?></a>
                     <?php endif; ?>
                 </div>
 

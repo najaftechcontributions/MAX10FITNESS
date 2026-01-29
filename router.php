@@ -27,10 +27,13 @@ $routes = [
     // Public routes
     '' => ['view' => 'views/home.php', 'auth' => false],
     'home' => ['view' => 'views/home.php', 'auth' => false],
+    'about' => ['view' => 'views/about.php', 'auth' => false],
+    'partner' => ['view' => 'views/partner.php', 'auth' => false],
+    'contact' => ['view' => 'views/contact.php', 'auth' => false],
     'login' => ['view' => 'views/login.php', 'auth' => false, 'guest_only' => true],
     'signup' => ['view' => 'views/signup.php', 'auth' => false, 'guest_only' => true],
     'logout' => ['view' => 'views/logout.php', 'auth' => true],
-    
+
     // Admin routes
     'dashboard' => ['view' => 'views/admin/dashboard.php', 'auth' => true, 'role' => 'admin'],
     'dashboard/users' => ['view' => 'views/admin/users.php', 'auth' => true, 'role' => 'admin'],

@@ -149,6 +149,23 @@ class DatabaseSeeder {
 
     private function seedSiteContent() {
         $contents = [
+            // ========== GLOBAL HEADER ==========
+            ['header.brand', 'MAX1ON1', 'global', 'header', 'heading', 'Brand name in header (first part)'],
+            ['header.nav.home', 'Home', 'global', 'header', 'link', 'Home navigation link'],
+            ['header.nav.about', 'About', 'global', 'header', 'link', 'About navigation link'],
+            ['header.nav.partner', 'Partner', 'global', 'header', 'link', 'Partner navigation link'],
+            ['header.nav.contact', 'Contact', 'global', 'header', 'link', 'Contact navigation link'],
+            ['header.login_button', 'Login', 'global', 'header', 'button', 'Login button in header'],
+            ['header.signup_button', 'Get Started', 'global', 'header', 'button', 'Signup button in header'],
+
+            // ========== GLOBAL FOOTER ==========
+            ['footer.brand', 'MAX1ON1', 'global', 'footer', 'heading', 'Brand name in footer (first part)'],
+            ['footer.description', 'Multi-device software and hardware solutions for the sports industry.', 'global', 'footer', 'text', 'Footer description'],
+            ['footer.products.title', 'Products', 'global', 'footer', 'heading', 'Products column title'],
+            ['footer.company.title', 'Company', 'global', 'footer', 'heading', 'Company column title'],
+            ['footer.support.title', 'Support', 'global', 'footer', 'heading', 'Support column title'],
+            ['footer.copyright', '© 2024 MAX1ON1FITNESS. All rights reserved.', 'global', 'footer', 'text', 'Footer copyright text'],
+
             // ========== LOGIN PAGE ==========
             ['login.page.title', 'Login - MAX1ON1FITNESS', 'login', 'page', 'heading', 'Page title for login'],
             ['login.form.heading', 'Welcome Back', 'login', 'form', 'heading', 'Login form heading'],
@@ -171,50 +188,37 @@ class DatabaseSeeder {
             ['signup.form.login_link_text', 'Already have an account?', 'signup', 'form', 'text', 'Login link text'],
             ['signup.form.login_link', 'Login', 'signup', 'form', 'link', 'Login link'],
 
-            // ========== HOME PAGE - HEADER ==========
-            ['home.header.brand', 'MAX1ON1', 'home', 'header', 'heading', 'Brand name in header (first part)'],
-            ['home.header.nav.home', 'Home', 'home', 'header', 'link', 'Home navigation link'],
-            ['home.header.nav.products', 'Products', 'home', 'header', 'link', 'Products navigation link'],
-            ['home.header.nav.features', 'Features', 'home', 'header', 'link', 'Features navigation link'],
-            ['home.header.nav.about', 'About', 'home', 'header', 'link', 'About navigation link'],
-            ['home.header.nav.contact', 'Contact', 'home', 'header', 'link', 'Contact navigation link'],
-            ['home.header.login_button', 'Login', 'home', 'header', 'button', 'Login button in header'],
-            ['home.header.signup_button', 'Get Started', 'home', 'header', 'button', 'Signup button in header'],
+            // ========== HOME PAGE ==========
+            ['home.page.title', 'MAX1ON1FITNESS - Multi-Device Sports & Fitness Solutions', 'home', 'page', 'heading', 'Home page title'],
+            ['home.hero.title', 'MAX1ON1FITNESS', 'home', 'hero', 'heading', 'Main hero title'],
+            ['home.hero.description', 'MAX1on1Fitness is a one-stop shop for multi-device software and hardware solutions for the sports industry, from integrated Bluetooth apps to multi-function full-workout apps that track a host of metrics across a variety of workouts, including weight training, boxing, and aerobics, and everything in between. From third-party product design to our own creations, we can build bespoke multi-device apps from scratch, tailored to any kind of sports or fitness training.', 'home', 'hero', 'paragraph', 'Hero description'],
 
-            // ========== HOME PAGE - HERO SECTION ==========
-            ['home.hero.title', 'Multi-Device Sports & Fitness Solutions', 'home', 'hero', 'heading', 'Main hero title'],
-            ['home.hero.subtitle', 'From integrated Bluetooth apps to multi-function full-workout trackers, we deliver bespoke software and hardware solutions for the sports industry.', 'home', 'hero', 'paragraph', 'Hero subtitle/description'],
-            ['home.hero.cta_button', 'Get Started', 'home', 'hero', 'button', 'Hero call-to-action button'],
-            ['home.hero.learn_more_button', 'Learn More', 'home', 'hero', 'button', 'Hero learn more button'],
+            // ========== ABOUT PAGE ==========
+            ['about.page.title', 'About Us - MAX1ON1FITNESS', 'about', 'page', 'heading', 'About page title'],
+            ['about.business.heading', 'Our Business Concept', 'about', 'business', 'heading', 'Business concept heading'],
+            ['about.business.description', 'Max 1ON1 Fitness is developing an AI & Virtual Reality-based fitness application (AV Fitness App) that enables remote fitness coaching through VR devices, combined with an AI assessment module for real-time monitoring, technique correction, and personalised programming. The product bridges immersive VR experiences with data-driven coaching to deliver scalable, engaging, and effective fitness training for individuals and organisations.', 'about', 'business', 'paragraph', 'Business concept description'],
+            ['about.products.heading', 'Our Products/Services', 'about', 'products', 'heading', 'Products/Services heading'],
+            ['about.products.description', 'The AV Fitness App delivers multi-module fitness coaching (strength, cardio, mobility, sports-specific drills) via downloadable applications for PC, laptop, and mobile devices, with cloud and local storage options. Core features include VR coaching sessions, AI motion analysis and feedback, real-time correction prompts, session recording, performance analytics, and integration APIs for training centres and institutional use.', 'about', 'products', 'paragraph', 'Products/Services description'],
 
-            // ========== HOME PAGE - PRODUCTS SECTION ==========
-            ['home.products.heading', 'Our Solutions', 'home', 'products', 'heading', 'Products section badge'],
-            ['home.products.subheading', 'Innovative Fitness Technology', 'home', 'products', 'heading', 'Products section title'],
+            // ========== PARTNER PAGE ==========
+            ['partner.page.title', 'Partner Login - MAX1ON1FITNESS', 'partner', 'page', 'heading', 'Partner page title'],
+            ['partner.heading', 'Welcome MAX1ON1FITNESS Technical Partnership Page', 'partner', 'form', 'heading', 'Partner page heading'],
+            ['partner.subheading', 'Please log in below', 'partner', 'form', 'text', 'Partner page subheading'],
+            ['partner.member_id_label', 'MEMBER ID', 'partner', 'form', 'text', 'Member ID label'],
+            ['partner.password_label', 'PASSWORD', 'partner', 'form', 'text', 'Password label'],
+            ['partner.submit_button', 'Login', 'partner', 'form', 'button', 'Partner login button'],
 
-            // ========== HOME PAGE - FEATURES SECTION ==========
-            ['home.features.heading', 'Why Choose Us', 'home', 'features', 'heading', 'Features section badge'],
-            ['home.features.subheading', 'Industry-Leading Technology', 'home', 'features', 'heading', 'Features section title'],
-            ['home.features.item1.title', 'Multi-Device Support', 'home', 'features', 'heading', 'Feature 1 title'],
-            ['home.features.item1.description', 'Works seamlessly across smartphones, tablets, and wearables', 'home', 'features', 'paragraph', 'Feature 1 description'],
-            ['home.features.item2.title', 'Real-Time Tracking', 'home', 'features', 'heading', 'Feature 2 title'],
-            ['home.features.item2.description', 'Monitor your progress in real-time with advanced analytics', 'home', 'features', 'paragraph', 'Feature 2 description'],
-            ['home.features.item3.title', 'Secure & Reliable', 'home', 'features', 'heading', 'Feature 3 title'],
-            ['home.features.item3.description', 'Enterprise-grade security for your data and privacy', 'home', 'features', 'paragraph', 'Feature 3 description'],
-
-            // ========== HOME PAGE - ABOUT SECTION ==========
-            ['home.about.heading', 'About MAX1ON1FITNESS', 'home', 'about', 'heading', 'About section heading'],
-            ['home.about.description', 'We are a one-stop shop for multi-device software and hardware solutions for the sports industry. Our mission is to deliver innovative, reliable, and user-friendly fitness technology.', 'home', 'about', 'paragraph', 'About section description'],
-
-            // ========== HOME PAGE - CONTACT SECTION ==========
-            ['home.contact.heading', 'Get In Touch', 'home', 'contact', 'heading', 'Contact section badge'],
-            ['home.contact.subheading', 'Ready to transform your fitness journey?', 'home', 'contact', 'heading', 'Contact section title'],
-            ['home.contact.name_label', 'Name', 'home', 'contact', 'text', 'Contact form name label'],
-            ['home.contact.email_label', 'Email', 'home', 'contact', 'text', 'Contact form email label'],
-            ['home.contact.message_label', 'Message', 'home', 'contact', 'text', 'Contact form message label'],
-            ['home.contact.submit_button', 'Send Message', 'home', 'contact', 'button', 'Contact form submit button'],
-
-            // ========== HOME PAGE - FOOTER ==========
-            ['home.footer.copyright', '© 2024 MAX1ON1FITNESS. All rights reserved.', 'home', 'footer', 'text', 'Footer copyright text'],
+            // ========== CONTACT PAGE ==========
+            ['contact.page.title', 'Contact Us - MAX1ON1FITNESS', 'contact', 'page', 'heading', 'Contact page title'],
+            ['contact.heading', 'Contact Us', 'contact', 'form', 'heading', 'Contact page heading'],
+            ['contact.subheading', 'Get in touch with us', 'contact', 'form', 'text', 'Contact page subheading'],
+            ['contact.name_label', 'Full Name', 'contact', 'form', 'text', 'Name input label'],
+            ['contact.email_label', 'Email Address', 'contact', 'form', 'text', 'Email input label'],
+            ['contact.phone_label', 'Phone Number', 'contact', 'form', 'text', 'Phone input label'],
+            ['contact.company_label', 'Company Name', 'contact', 'form', 'text', 'Company input label'],
+            ['contact.subject_label', 'Subject', 'contact', 'form', 'text', 'Subject input label'],
+            ['contact.message_label', 'Message', 'contact', 'form', 'text', 'Message textarea label'],
+            ['contact.submit_button', 'Send Message', 'contact', 'form', 'button', 'Contact form submit button'],
 
             // ========== DASHBOARD ==========
             ['dashboard.page.title', 'Admin Dashboard - MAX1ON1FITNESS', 'dashboard', 'page', 'heading', 'Dashboard page title'],
