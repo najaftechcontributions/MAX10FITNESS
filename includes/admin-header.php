@@ -1,15 +1,8 @@
 <?php
-/**
- * Admin Header File
- * Contains HTML head, body start, and admin navigation
- */
-
-// Ensure session is available
 if (!isset($currentUsername)) {
     $currentUsername = getCurrentUsername();
 }
 
-// Get page-specific variables
 $pageTitle = $pageTitle ?? 'Admin Dashboard - MAX1ON1FITNESS';
 $currentAdminPage = $currentAdminPage ?? 'dashboard';
 ?>
@@ -24,7 +17,6 @@ $currentAdminPage = $currentAdminPage ?? 'dashboard';
 </head>
 <body>
     <div class="admin-container">
-        <!-- Sidebar -->
         <aside class="admin-sidebar">
             <div class="admin-brand">
                 <h2>MAX1ON1FITNESS</h2>
@@ -66,7 +58,6 @@ $currentAdminPage = $currentAdminPage ?? 'dashboard';
             </nav>
         </aside>
 
-        <!-- Main Content -->
         <main class="admin-main">
             <div class="admin-header">
                 <h1><?php echo $pageHeading ?? 'Dashboard'; ?></h1>
@@ -76,5 +67,4 @@ $currentAdminPage = $currentAdminPage ?? 'dashboard';
                 </div>
             </div>
 
-            <!-- Admin Main Content Container -->
             <div id="admin-main-content">

@@ -1,4 +1,3 @@
-// Navbar scroll effect
 const navbar = document.querySelector('.navbar');
 let lastScroll = 0;
 
@@ -14,7 +13,6 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// Mobile menu toggle
 const mobileToggle = document.querySelector('.mobile-toggle');
 const navMenu = document.querySelector('.nav-menu');
 const navActions = document.querySelector('.nav-actions');
@@ -27,12 +25,10 @@ if (mobileToggle) {
     });
 }
 
-// Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
         
-        // Only prevent default if it's not just '#'
         if (href !== '#') {
             e.preventDefault();
             const target = document.querySelector(href);
@@ -45,7 +41,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     behavior: 'smooth'
                 });
                 
-                // Close mobile menu if open
                 if (navMenu.classList.contains('active')) {
                     navMenu.classList.remove('active');
                     navActions.classList.remove('active');
@@ -56,7 +51,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Active navigation link on scroll
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
 
@@ -81,7 +75,6 @@ function setActiveNav() {
 
 window.addEventListener('scroll', setActiveNav);
 
-// Intersection Observer for animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'
@@ -96,7 +89,6 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe elements for animation
 const animateElements = document.querySelectorAll('.product-card, .feature-box, .highlight-item, .dashboard-card, .info-card');
 animateElements.forEach(el => {
     el.style.opacity = '0';
@@ -105,7 +97,6 @@ animateElements.forEach(el => {
     observer.observe(el);
 });
 
-// Contact form handling
 const contactForm = document.querySelector('.contact-form');
 
 if (contactForm) {
@@ -116,46 +107,18 @@ if (contactForm) {
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
         
-        // Show loading state
         submitBtn.innerHTML = 'Sending...';
         submitBtn.disabled = true;
         
-        // Simulate form submission (replace with actual backend call)
         setTimeout(() => {
             alert('Thank you for your message! We will get back to you soon.');
             contactForm.reset();
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
         }, 1500);
-        
-        // Uncomment below for actual form submission
-        /*
-        try {
-            const response = await fetch('process-contact.php', {
-                method: 'POST',
-                body: formData
-            });
-            
-            const result = await response.json();
-            
-            if (result.success) {
-                alert('Thank you for your message! We will get back to you soon.');
-                contactForm.reset();
-            } else {
-                alert('There was an error sending your message. Please try again.');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('There was an error sending your message. Please try again.');
-        } finally {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-        }
-        */
     });
 }
 
-// Counter animation for stats
 function animateCounter(element, target, duration = 2000) {
     const start = 0;
     const increment = target / (duration / 16);
@@ -168,7 +131,6 @@ function animateCounter(element, target, duration = 2000) {
             clearInterval(timer);
         }
         
-        // Format number with K, M suffix
         let displayValue;
         if (target >= 1000000) {
             displayValue = (current / 1000000).toFixed(1) + 'M+';
@@ -182,7 +144,6 @@ function animateCounter(element, target, duration = 2000) {
     }, 16);
 }
 
-// Observe hero stats for counter animation
 const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
@@ -200,7 +161,6 @@ const statsObserver = new IntersectionObserver((entries) => {
 const statValues = document.querySelectorAll('.stat-item h3, .stat-value');
 statValues.forEach(stat => statsObserver.observe(stat));
 
-// Add parallax effect to hero section
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const parallaxElements = document.querySelectorAll('.hero-orb');
@@ -211,7 +171,6 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Add hover effect to product cards
 const productCards = document.querySelectorAll('.product-card');
 productCards.forEach(card => {
     card.addEventListener('mouseenter', function() {
@@ -223,7 +182,6 @@ productCards.forEach(card => {
     });
 });
 
-// Loading animation
 window.addEventListener('load', () => {
     document.body.style.opacity = '0';
     document.body.style.transition = 'opacity 0.5s ease';
@@ -233,7 +191,6 @@ window.addEventListener('load', () => {
     }, 100);
 });
 
-// Navbar background on scroll
 let scrollTimeout;
 window.addEventListener('scroll', () => {
     clearTimeout(scrollTimeout);

@@ -1,10 +1,4 @@
 <?php
-/**
- * Common Header File
- * Contains HTML head, body start, and main navigation
- */
-
-// Ensure session and database are available
 if (!isset($db)) {
     require_once __DIR__ . '/../config/Database.php';
     require_once __DIR__ . '/../models/SiteContent.php';
@@ -12,7 +6,6 @@ if (!isset($db)) {
     $db = $database->getConnection();
 }
 
-// Get page-specific variables
 $pageTitle = $pageTitle ?? 'MAX1ON1FITNESS - Multi-Device Sports & Fitness Solutions';
 $pageDescription = $pageDescription ?? 'Multi-device software and hardware solutions for the sports industry';
 $currentPage = $currentPage ?? 'home';
@@ -28,7 +21,6 @@ $currentPage = $currentPage ?? 'home';
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-wrapper">
@@ -63,5 +55,4 @@ $currentPage = $currentPage ?? 'home';
         </div>
     </nav>
 
-    <!-- Main Content Container -->
     <div id="main-content">

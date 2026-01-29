@@ -1,12 +1,6 @@
 <?php
-/**
- * Admin Dashboard View
- * Contains only the main content
- */
-
 require_once __DIR__ . '/../../models/User.php';
 
-// Require admin access
 requireAdmin();
 
 $user = new User($db);
@@ -20,23 +14,18 @@ $stats = [
 ];
 
 try {
-    // Total users
     $stmt = $db->query("SELECT COUNT(*) as count FROM users");
     $stats['total_users'] = $stmt->fetch()['count'];
     
-    // Admin users
     $stmt = $db->query("SELECT COUNT(*) as count FROM users WHERE role = 'admin'");
     $stats['admin_users'] = $stmt->fetch()['count'];
     
-    // Regular users
     $stmt = $db->query("SELECT COUNT(*) as count FROM users WHERE role = 'user'");
     $stats['regular_users'] = $stmt->fetch()['count'];
     
-    // Recent users (last 7 days)
     $stmt = $db->query("SELECT COUNT(*) as count FROM users WHERE created_at >= DATE_SUB(NOW(), INTERVAL 7 DAY)");
     $stats['recent_users'] = $stmt->fetch()['count'];
     
-    // Recent users list
     $stmt = $db->query("SELECT id, username, email, role, created_at FROM users ORDER BY created_at DESC LIMIT 5");
     $recent_users = $stmt->fetchAll();
 } catch(PDOException $e) {
@@ -48,11 +37,8 @@ $currentAdminPage = 'dashboard';
 $pageHeading = 'Dashboard';
 $currentUsername = getCurrentUsername();
 
-// Include admin header
 require_once __DIR__ . '/../../includes/admin-header.php';
 ?>
-
-<!-- Statistics Cards -->
 <div class="stats-grid">
     <div class="stat-card">
         <div class="stat-card-header">
@@ -86,8 +72,6 @@ require_once __DIR__ . '/../../includes/admin-header.php';
         <div class="stat-card-value"><?php echo $stats['recent_users']; ?></div>
     </div>
 </div>
-
-<!-- Recent Users -->
 <div class="content-card">
     <div class="content-card-header">
         <h2 class="content-card-title">Recent Users</h2>
@@ -134,7 +118,4 @@ require_once __DIR__ . '/../../includes/admin-header.php';
     <?php endif; ?>
 </div>
 
-<?php
-// Include admin footer
-require_once __DIR__ . '/../../includes/admin-footer.php';
-?>
+<?php require_once __DIR__ . '/../../includes/admin-footer.php'; ?>
