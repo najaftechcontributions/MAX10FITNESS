@@ -13,6 +13,7 @@ $success = '';
 $error = '';
 $search_term = '';
 $selected_page = '';
+$selected_section = '';
 
 // Handle content update
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action']) && $_POST['action'] == 'update') {
@@ -27,19 +28,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action']) && $_POST['a
     }
 }
 
-// Handle search
+// Get filter values
 if (isset($_GET['search']) && !empty($_GET['search'])) {
     $search_term = $_GET['search'];
-    $all_content = $siteContent->search($search_term);
-} elseif (isset($_GET['page']) && !empty($_GET['page'])) {
+}
+if (isset($_GET['page']) && !empty($_GET['page'])) {
     $selected_page = $_GET['page'];
-    $all_content = $siteContent->getByPage($selected_page);
-} else {
-    $all_content = $siteContent->getAll();
+}
+if (isset($_GET['section']) && !empty($_GET['section'])) {
+    $selected_section = $_GET['section'];
 }
 
-// Get all pages for filter
+// Use new filtered method that combines all filters
+$all_content = $siteContent->getFiltered($selected_page, $selected_section, $search_term);
+
+// Get all pages and sections for filters
 $pages = $siteContent->getPages();
+$sections = $siteContent->getSections();
 
 $pageTitle = 'Content Management - MAX1ON1FITNESS';
 $currentAdminPage = 'content';
@@ -63,12 +68,16 @@ require_once __DIR__ . '/../../includes/admin-header.php';
         align-items: center;
         justify-content: center;
         overflow-y: auto;
+        backdrop-filter: blur(5px);
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
-    
+
     .modal.active {
         display: flex;
+        opacity: 1;
     }
-    
+
     .modal-content {
         background: white;
         padding: 2rem;
@@ -76,21 +85,53 @@ require_once __DIR__ . '/../../includes/admin-header.php';
         max-width: 700px;
         width: 90%;
         margin: 2rem auto;
+        transform: scale(0.9);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     }
-    
+
+    .modal.active .modal-content {
+        transform: scale(1);
+    }
+
     .modal-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #f0f0f0;
     }
-    
+
+    .modal-header h2 {
+        color: #333;
+        font-size: 1.5rem;
+    }
+
     .modal-close {
         background: none;
         border: none;
         font-size: 1.5rem;
         cursor: pointer;
         color: #666;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+    }
+
+    .modal-close:hover {
+        background: #f3f4f6;
+        color: #333;
+        transform: rotate(90deg);
+    }
+
+    .modal-close:focus {
+        outline: 2px solid #667eea;
+        outline-offset: 2px;
     }
     
     .filter-bar {
@@ -172,24 +213,34 @@ require_once __DIR__ . '/../../includes/admin-header.php';
 <!-- Filter & Search -->
 <div class="content-card">
     <form method="GET" action="" class="filter-bar">
-        <select name="page" onchange="this.form.submit()">
+        <select name="page">
             <option value="">All Pages</option>
             <?php foreach ($pages as $page): ?>
-                <option value="<?php echo htmlspecialchars($page); ?>" 
+                <option value="<?php echo htmlspecialchars($page); ?>"
                         <?php echo $selected_page === $page ? 'selected' : ''; ?>>
                     <?php echo htmlspecialchars(ucfirst($page)); ?>
                 </option>
             <?php endforeach; ?>
         </select>
-        
-        <input type="text" 
-               name="search" 
-               placeholder="Search content..." 
+
+        <select name="section">
+            <option value="">All Sections</option>
+            <?php foreach ($sections as $section): ?>
+                <option value="<?php echo htmlspecialchars($section); ?>"
+                        <?php echo $selected_section === $section ? 'selected' : ''; ?>>
+                    <?php echo htmlspecialchars(ucfirst($section)); ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+
+        <input type="text"
+               name="search"
+               placeholder="Search content..."
                value="<?php echo htmlspecialchars($search_term); ?>">
-        
-        <button type="submit" class="btn btn-primary btn-sm">Search</button>
-        
-        <?php if ($search_term || $selected_page): ?>
+
+        <button type="submit" class="btn btn-primary btn-sm">Apply Filters</button>
+
+        <?php if ($search_term || $selected_page || $selected_section): ?>
             <a href="/dashboard/content" class="btn btn-secondary btn-sm">Clear Filters</a>
         <?php endif; ?>
     </form>
@@ -199,11 +250,20 @@ require_once __DIR__ . '/../../includes/admin-header.php';
 <div class="content-card">
     <div class="content-card-header">
         <h2 class="content-card-title">
-            <?php 
+            <?php
+            $title_parts = [];
+            if ($selected_page) {
+                $title_parts[] = ucfirst($selected_page) . " Page";
+            }
+            if ($selected_section) {
+                $title_parts[] = ucfirst($selected_section) . " Section";
+            }
             if ($search_term) {
-                echo "Search Results (" . count($all_content) . ")";
-            } elseif ($selected_page) {
-                echo ucfirst($selected_page) . " Page Content (" . count($all_content) . ")";
+                $title_parts[] = "Search: '" . htmlspecialchars($search_term) . "'";
+            }
+
+            if (!empty($title_parts)) {
+                echo implode(" | ", $title_parts) . " (" . count($all_content) . ")";
             } else {
                 echo "All Content (" . count($all_content) . ")";
             }

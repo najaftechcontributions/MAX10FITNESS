@@ -126,6 +126,52 @@ class SiteContent {
         return $stmt->fetchAll(PDO::FETCH_COLUMN);
     }
 
+    // Get all sections
+    public function getSections() {
+        $query = "SELECT DISTINCT section_name FROM " . $this->table_name . " ORDER BY section_name ASC";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_COLUMN);
+    }
+
+    // Get content by page and section with optional search
+    public function getFiltered($page_name = null, $section_name = null, $search_term = null) {
+        $conditions = [];
+        $params = [];
+
+        if (!empty($page_name)) {
+            $conditions[] = "page_name = :page_name";
+            $params[':page_name'] = $page_name;
+        }
+
+        if (!empty($section_name)) {
+            $conditions[] = "section_name = :section_name";
+            $params[':section_name'] = $section_name;
+        }
+
+        if (!empty($search_term)) {
+            $conditions[] = "(content_key LIKE :search OR content_value LIKE :search OR description LIKE :search OR page_name LIKE :search OR section_name LIKE :search)";
+            $params[':search'] = "%{$search_term}%";
+        }
+
+        $query = "SELECT * FROM " . $this->table_name;
+
+        if (!empty($conditions)) {
+            $query .= " WHERE " . implode(" AND ", $conditions);
+        }
+
+        $query .= " ORDER BY page_name ASC, section_name ASC, content_key ASC";
+
+        $stmt = $this->conn->prepare($query);
+
+        foreach ($params as $key => $value) {
+            $stmt->bindValue($key, $value);
+        }
+
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     // Search content
     public function search($search_term) {
         $query = "SELECT * FROM " . $this->table_name . " 
