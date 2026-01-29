@@ -1,8 +1,7 @@
 <?php
 /**
  * Main Entry Point
- * Redirects to router for proper routing
+ * Loads the router for proper routing
  */
-header("Location: /");
-exit();
+require_once __DIR__ . '/router.php';
 ?>
