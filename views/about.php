@@ -37,10 +37,10 @@ require_once __DIR__ . '/../includes/header.php';
             <div class="content-images-about">
                 <div class="image-stack-about">
                     <div class="about-image-card">
-                        <img src="" alt="Male athlete training" class="about-training-image">
+                        <img src="/assets/images/aifitness.jpg" alt="Male athlete training" class="about-training-image">
                     </div>
                     <div class="about-image-card">
-                        <img src="" alt="Male fitness training session" class="about-training-image">
+                        <img src="/assets/images/vrfitness.jpg" alt="Male fitness training session" class="about-training-image">
                     </div>
                 </div>
             </div>
@@ -55,13 +55,13 @@ require_once __DIR__ . '/../includes/header.php';
             <div class="content-images-about">
                 <div class="image-stack-about">
                     <div class="about-image-card">
-                        <img src="" alt="Sports software interface" class="about-training-image">
+                        <img src="/assets/images/sportssoftware.webp" alt="Sports software interface" class="about-training-image">
                     </div>
                     <div class="about-image-card">
-                        <img src="" alt="Female athlete in sportswear training" class="about-training-image">
+                        <img src="/assets/images/heartratemonitor.webp" alt="Female athlete in sportswear training" class="about-training-image">
                     </div>
                     <div class="about-image-card">
-                        <img src="" alt="Fitness device and technology" class="about-training-image">
+                        <img src="/assets/images/cyclingmonitor.webp" alt="Fitness device and technology" class="about-training-image">
                     </div>
                 </div>
             </div>
