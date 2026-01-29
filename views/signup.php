@@ -1,17 +1,15 @@
 <?php
-require_once '../includes/session.php';
-require_once '../config/Database.php';
-require_once '../models/User.php';
-require_once '../models/SiteContent.php';
+/**
+ * Signup Page View
+ * Contains only the main content
+ */
 
 $error = '';
 $success = '';
 
-// Get database connection for content
-$database = new Database();
-$db = $database->getConnection();
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    require_once __DIR__ . '/../models/User.php';
+    
     $username = $_POST['username'] ?? '';
     $email = $_POST['email'] ?? '';
     $password = $_POST['password'] ?? '';
@@ -24,10 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif (strlen($password) < 6) {
         $error = 'Password must be at least 6 characters long';
     } else {
-        $database = new Database();
-        $db = $database->getConnection();
         $user = new User($db);
-        
         $user->username = $username;
         $user->email = $email;
         
@@ -37,24 +32,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $user->password = $password;
             if ($user->create()) {
                 $success = 'Account created successfully! Redirecting to login...';
-                header("refresh:2;url=login.php");
+                header("refresh:2;url=/login");
             } else {
                 $error = 'Unable to create account. Please try again.';
             }
         }
     }
 }
+
+$pageTitle = SiteContent::getValue($db, 'signup.page.title', 'Sign Up - MAX1ON1FITNESS');
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo SiteContent::getValue($db, 'signup.page.title', 'Sign Up - MAX1ON1FITNESS'); ?></title>
-    <link rel="stylesheet" href="../assets/css/auth.css">
+    <title><?php echo htmlspecialchars($pageTitle); ?></title>
+    <link rel="stylesheet" href="/assets/css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="auth-page">
     <div class="auth-container">
         <div class="auth-left">
             <div class="brand-section">
@@ -136,7 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </form>
 
                 <div class="auth-footer">
-                    <p><?php echo SiteContent::getValue($db, 'signup.form.login_link_text', 'Already have an account?'); ?> <a href="login.php"><?php echo SiteContent::getValue($db, 'signup.form.login_link', 'Login'); ?></a></p>
+                    <p><?php echo SiteContent::getValue($db, 'signup.form.login_link_text', 'Already have an account?'); ?> <a href="/login"><?php echo SiteContent::getValue($db, 'signup.form.login_link', 'Login'); ?></a></p>
                 </div>
             </div>
         </div>

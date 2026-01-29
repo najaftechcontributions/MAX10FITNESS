@@ -91,7 +91,7 @@
             Something went wrong on our end. We're working to fix it. Please try again later.
         </p>
         <div class="error-actions">
-            <a href="../index.php" class="btn btn-primary">Go Home</a>
+            <a href="/" class="btn btn-primary">Go Home</a>
             <a href="javascript:location.reload()" class="btn btn-secondary">Refresh Page</a>
         </div>
     </div>

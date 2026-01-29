@@ -1,3 +1,11 @@
+/* ==========================================
+   MAX1ON1FITNESS - Main Stylesheet
+   Contains all styles for public and admin pages
+   ========================================== */
+
+/* ==========================================
+   1. CSS RESET & GLOBAL STYLES
+   ========================================== */
 * {
     margin: 0;
     padding: 0;
@@ -17,6 +25,8 @@
     --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.15);
+    --success-color: #00b894;
+    --error-color: #ff4655;
 }
 
 html {
@@ -36,7 +46,9 @@ body {
     padding: 0 20px;
 }
 
-/* Navigation */
+/* ==========================================
+   2. NAVIGATION
+   ========================================== */
 .navbar {
     position: fixed;
     top: 0;
@@ -123,6 +135,7 @@ body {
     font-weight: 600;
     font-size: 14px;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .btn-outline:hover {
@@ -140,6 +153,7 @@ body {
     font-weight: 600;
     font-size: 14px;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .btn-gradient:hover {
@@ -162,7 +176,9 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Hero Section */
+/* ==========================================
+   3. HERO SECTION
+   ========================================== */
 .hero-section {
     min-height: 100vh;
     display: flex;
@@ -277,7 +293,13 @@ body {
     font-size: 16px;
     border-radius: 12px;
     transition: all 0.3s ease;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
 }
 
 .btn-primary:hover {
@@ -430,7 +452,9 @@ body {
     }
 }
 
-/* Section Styles */
+/* ==========================================
+   4. SECTION STYLES
+   ========================================== */
 section {
     padding: 100px 0;
 }
@@ -465,7 +489,9 @@ section {
     margin: 0 auto;
 }
 
-/* Products Section */
+/* ==========================================
+   5. PRODUCTS SECTION
+   ========================================== */
 .products-section {
     background: var(--bg-light);
 }
@@ -588,7 +614,9 @@ section {
     gap: 10px;
 }
 
-/* Features Section */
+/* ==========================================
+   6. FEATURES SECTION
+   ========================================== */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -635,7 +663,9 @@ section {
     line-height: 1.7;
 }
 
-/* About Section */
+/* ==========================================
+   7. ABOUT SECTION
+   ========================================== */
 .about-section {
     background: var(--bg-light);
 }
@@ -740,7 +770,9 @@ section {
     background-clip: text;
 }
 
-/* Contact Section */
+/* ==========================================
+   8. CONTACT SECTION
+   ========================================== */
 .contact-content {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
@@ -772,17 +804,20 @@ section {
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-control {
     padding: 15px 20px;
     border: 2px solid var(--border-color);
     border-radius: 10px;
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
     transition: all 0.3s ease;
+    width: 100%;
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
+.form-group textarea:focus,
+.form-control:focus {
     outline: none;
     border-color: #667eea;
     box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
@@ -790,6 +825,11 @@ section {
 
 .form-group textarea {
     resize: vertical;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
 }
 
 .contact-info {
@@ -829,7 +869,9 @@ section {
     color: var(--text-light);
 }
 
-/* Footer */
+/* ==========================================
+   9. FOOTER
+   ========================================== */
 .footer {
     background: var(--dark-color);
     color: var(--white);
@@ -892,7 +934,608 @@ section {
     font-size: 14px;
 }
 
-/* Animations */
+/* ==========================================
+   10. AUTH PAGES (Login/Signup)
+   ========================================== */
+body.auth-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    overflow-x: hidden;
+    position: relative;
+}
+
+.auth-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+.auth-left {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-left::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: moveGrid 20s linear infinite;
+}
+
+@keyframes moveGrid {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(50px, 50px);
+    }
+}
+
+.brand-section {
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.brand-logo {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+    animation: fadeInDown 0.8s ease;
+}
+
+.brand-logo span {
+    color: var(--accent-gradient);
+}
+
+.brand-tagline {
+    font-size: 18px;
+    font-weight: 300;
+    opacity: 0.9;
+    animation: fadeInDown 0.8s ease 0.2s both;
+}
+
+.feature-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.feature-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+    animation: fadeInLeft 0.8s ease;
+}
+
+.feature-item:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.feature-item:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.feature-item:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+.feature-item:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.feature-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.feature-item p {
+    font-size: 14px;
+    opacity: 0.8;
+    font-weight: 300;
+}
+
+.auth-right {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    position: relative;
+}
+
+.auth-form-wrapper {
+    max-width: 480px;
+    width: 100%;
+    animation: fadeInRight 0.8s ease;
+}
+
+.auth-header {
+    margin-bottom: 40px;
+}
+
+.auth-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.auth-header p {
+    font-size: 16px;
+    color: var(--text-light);
+    font-weight: 400;
+}
+
+.alert {
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    animation: slideDown 0.4s ease;
+}
+
+.alert-error {
+    background: rgba(255, 70, 85, 0.1);
+    color: var(--error-color);
+    border: 1px solid rgba(255, 70, 85, 0.2);
+}
+
+.alert-success {
+    background: rgba(0, 184, 148, 0.1);
+    color: var(--success-color);
+    border: 1px solid rgba(0, 184, 148, 0.2);
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.forgot-link {
+    font-size: 14px;
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.forgot-link:hover {
+    color: #764ba2;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.auth-footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.auth-footer p {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.auth-footer a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.auth-footer a:hover {
+    color: #764ba2;
+}
+
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.6;
+    animation: float 20s ease-in-out infinite;
+}
+
+.orb-1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #667eea, transparent);
+    top: -200px;
+    left: -200px;
+    animation-delay: 0s;
+}
+
+.orb-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #f5576c, transparent);
+    bottom: -250px;
+    right: -250px;
+    animation-delay: 5s;
+}
+
+.orb-3 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, #00f2fe, transparent);
+    top: 50%;
+    left: 50%;
+    animation-delay: 10s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(50px, -50px) scale(1.1);
+    }
+    66% {
+        transform: translate(-50px, 50px) scale(0.9);
+    }
+}
+
+/* ==========================================
+   11. ADMIN DASHBOARD
+   ========================================== */
+body.admin-page {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.admin-sidebar {
+    width: 260px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 2rem 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-brand {
+    padding: 0 1.5rem 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.admin-brand h2 {
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.admin-brand p {
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+.admin-menu {
+    list-style: none;
+    padding: 1rem 0;
+}
+
+.admin-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1.5rem;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.admin-menu li a:hover,
+.admin-menu li a.active {
+    background: linear-gradient(90deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    border-left: 3px solid #667eea;
+    color: #667eea;
+}
+
+.admin-menu-icon {
+    font-size: 1.25rem;
+}
+
+.admin-main {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.admin-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.admin-header h1 {
+    font-size: 1.875rem;
+    color: #333;
+}
+
+.admin-user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.admin-user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.stat-card-title {
+    color: #666;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.stat-card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.stat-card-icon.blue {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+}
+
+.stat-card-icon.purple {
+    background: rgba(118, 75, 162, 0.1);
+    color: #764ba2;
+}
+
+.stat-card-icon.green {
+    background: rgba(52, 211, 153, 0.1);
+    color: #34d399;
+}
+
+.stat-card-icon.orange {
+    background: rgba(251, 146, 60, 0.1);
+    color: #fb923c;
+}
+
+.stat-card-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.content-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.content-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.content-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table thead th {
+    text-align: left;
+    padding: 1rem;
+    font-weight: 600;
+    color: #666;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.admin-table tbody td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.admin-table tbody tr:hover {
+    background: rgba(102, 126, 234, 0.05);
+}
+
+.btn {
+    padding: 0.625rem 1.25rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-secondary {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+}
+
+.btn-secondary:hover {
+    background: rgba(102, 126, 234, 0.2);
+}
+
+.btn-danger {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.btn-danger:hover {
+    background: rgba(239, 68, 68, 0.2);
+}
+
+.btn-success {
+    background: rgba(52, 211, 153, 0.1);
+    color: #34d399;
+}
+
+.btn-success:hover {
+    background: rgba(52, 211, 153, 0.2);
+}
+
+.btn-sm {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+.badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.badge-admin {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+}
+
+.badge-user {
+    background: rgba(52, 211, 153, 0.1);
+    color: #34d399;
+}
+
+/* ==========================================
+   12. ANIMATIONS
+   ========================================== */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -915,7 +1558,42 @@ section {
     }
 }
 
-/* Responsive Design */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   13. RESPONSIVE DESIGN
+   ========================================== */
 @media (max-width: 1024px) {
     .hero-content {
         grid-template-columns: 1fr;
@@ -937,6 +1615,18 @@ section {
 
     .products-grid {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .auth-container {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-left {
+        display: none;
+    }
+
+    .auth-right {
+        padding: 40px 20px;
     }
 }
 
@@ -988,5 +1678,42 @@ section {
 
     .footer-links {
         grid-template-columns: 1fr;
+    }
+
+    .admin-sidebar {
+        position: fixed;
+        left: -260px;
+        top: 0;
+        height: 100vh;
+        z-index: 1000;
+        transition: left 0.3s ease;
+    }
+
+    .admin-sidebar.active {
+        left: 0;
+    }
+
+    .admin-main {
+        padding: 1rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-header h2 {
+        font-size: 28px;
+    }
+
+    .auth-form-wrapper {
+        padding: 0;
+    }
+
+    .form-group input {
+        padding: 12px 16px;
+    }
+
+    .btn-primary {
+        padding: 14px 24px;
     }
 }

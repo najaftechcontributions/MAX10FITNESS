@@ -1,27 +1,22 @@
 <?php
-require_once '../includes/session.php';
-require_once '../config/Database.php';
-require_once '../models/User.php';
-require_once '../models/SiteContent.php';
+/**
+ * Login Page View
+ * Contains only the main content
+ */
 
 $error = '';
 $success = '';
 
-// Get database connection for content
-$database = new Database();
-$db = $database->getConnection();
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    require_once __DIR__ . '/../models/User.php';
+    
     $email = $_POST['email'] ?? '';
     $password = $_POST['password'] ?? '';
 
     if (empty($email) || empty($password)) {
         $error = 'Please fill in all fields';
     } else {
-        $database = new Database();
-        $db = $database->getConnection();
         $user = new User($db);
-        
         $user->email = $email;
         
         if ($user->emailExists()) {
@@ -30,9 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 // Redirect based on role
                 if ($user->role === 'admin') {
-                    header("Location: ../admin/dashboard.php");
+                    header("Location: /dashboard");
                 } else {
-                    header("Location: ../index.php");
+                    header("Location: /");
                 }
                 exit();
             } else {
@@ -43,17 +38,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 }
+
+$pageTitle = SiteContent::getValue($db, 'login.page.title', 'Login - MAX1ON1FITNESS');
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo SiteContent::getValue($db, 'login.page.title', 'Login - MAX1ON1FITNESS'); ?></title>
-    <link rel="stylesheet" href="../assets/css/auth.css">
+    <title><?php echo htmlspecialchars($pageTitle); ?></title>
+    <link rel="stylesheet" href="/assets/css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="auth-page">
     <div class="auth-container">
         <div class="auth-left">
             <div class="brand-section">
@@ -126,7 +123,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </form>
 
                 <div class="auth-footer">
-                    <p><?php echo SiteContent::getValue($db, 'login.form.signup_link_text', 'Don\'t have an account?'); ?> <a href="signup.php"><?php echo SiteContent::getValue($db, 'login.form.signup_link', 'Sign Up'); ?></a></p>
+                    <p><?php echo SiteContent::getValue($db, 'login.form.signup_link_text', 'Don\'t have an account?'); ?> <a href="/signup"><?php echo SiteContent::getValue($db, 'login.form.signup_link', 'Sign Up'); ?></a></p>
                 </div>
             </div>
         </div>

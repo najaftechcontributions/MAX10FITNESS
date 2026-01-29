@@ -149,8 +149,8 @@ class DatabaseSeeder {
 
     private function seedSiteContent() {
         $contents = [
-            // Login Page
-            ['login.page.title', 'Login to MAX1ON1FITNESS', 'login', 'page', 'heading', 'Page title for login'],
+            // ========== LOGIN PAGE ==========
+            ['login.page.title', 'Login - MAX1ON1FITNESS', 'login', 'page', 'heading', 'Page title for login'],
             ['login.form.heading', 'Welcome Back', 'login', 'form', 'heading', 'Login form heading'],
             ['login.form.subheading', 'Login to your account', 'login', 'form', 'text', 'Login form subheading'],
             ['login.form.email_label', 'Email Address', 'login', 'form', 'text', 'Email input label'],
@@ -159,7 +159,7 @@ class DatabaseSeeder {
             ['login.form.signup_link_text', 'Don\'t have an account?', 'login', 'form', 'text', 'Signup link text'],
             ['login.form.signup_link', 'Sign Up', 'login', 'form', 'link', 'Signup link'],
 
-            // Signup Page
+            // ========== SIGNUP PAGE ==========
             ['signup.page.title', 'Sign Up - MAX1ON1FITNESS', 'signup', 'page', 'heading', 'Page title for signup'],
             ['signup.form.heading', 'Create Account', 'signup', 'form', 'heading', 'Signup form heading'],
             ['signup.form.subheading', 'Join MAX1ON1FITNESS today', 'signup', 'form', 'text', 'Signup form subheading'],
@@ -171,8 +171,8 @@ class DatabaseSeeder {
             ['signup.form.login_link_text', 'Already have an account?', 'signup', 'form', 'text', 'Login link text'],
             ['signup.form.login_link', 'Login', 'signup', 'form', 'link', 'Login link'],
 
-            // Home Page - Header
-            ['home.header.brand', 'MAX1ON1FITNESS', 'home', 'header', 'heading', 'Brand name in header'],
+            // ========== HOME PAGE - HEADER ==========
+            ['home.header.brand', 'MAX1ON1', 'home', 'header', 'heading', 'Brand name in header (first part)'],
             ['home.header.nav.home', 'Home', 'home', 'header', 'link', 'Home navigation link'],
             ['home.header.nav.products', 'Products', 'home', 'header', 'link', 'Products navigation link'],
             ['home.header.nav.features', 'Features', 'home', 'header', 'link', 'Features navigation link'],
@@ -181,25 +181,19 @@ class DatabaseSeeder {
             ['home.header.login_button', 'Login', 'home', 'header', 'button', 'Login button in header'],
             ['home.header.signup_button', 'Get Started', 'home', 'header', 'button', 'Signup button in header'],
 
-            // Home Page - Hero Section
+            // ========== HOME PAGE - HERO SECTION ==========
             ['home.hero.title', 'Multi-Device Sports & Fitness Solutions', 'home', 'hero', 'heading', 'Main hero title'],
             ['home.hero.subtitle', 'From integrated Bluetooth apps to multi-function full-workout trackers, we deliver bespoke software and hardware solutions for the sports industry.', 'home', 'hero', 'paragraph', 'Hero subtitle/description'],
             ['home.hero.cta_button', 'Get Started', 'home', 'hero', 'button', 'Hero call-to-action button'],
             ['home.hero.learn_more_button', 'Learn More', 'home', 'hero', 'button', 'Hero learn more button'],
 
-            // Home Page - Products Section
-            ['home.products.heading', 'Our Solutions', 'home', 'products', 'heading', 'Products section heading'],
-            ['home.products.subheading', 'Innovative Fitness Technology', 'home', 'products', 'text', 'Products section subheading'],
-            ['home.products.item1.title', 'Bluetooth Integration', 'home', 'products', 'heading', 'Product 1 title'],
-            ['home.products.item1.description', 'Seamless connectivity across all your devices with advanced Bluetooth technology', 'home', 'products', 'paragraph', 'Product 1 description'],
-            ['home.products.item2.title', 'Workout Trackers', 'home', 'products', 'heading', 'Product 2 title'],
-            ['home.products.item2.description', 'Multi-function trackers that monitor every aspect of your fitness journey', 'home', 'products', 'paragraph', 'Product 2 description'],
-            ['home.products.item3.title', 'Custom Software', 'home', 'products', 'heading', 'Product 3 title'],
-            ['home.products.item3.description', 'Bespoke software solutions tailored to your specific needs', 'home', 'products', 'paragraph', 'Product 3 description'],
+            // ========== HOME PAGE - PRODUCTS SECTION ==========
+            ['home.products.heading', 'Our Solutions', 'home', 'products', 'heading', 'Products section badge'],
+            ['home.products.subheading', 'Innovative Fitness Technology', 'home', 'products', 'heading', 'Products section title'],
 
-            // Home Page - Features Section
-            ['home.features.heading', 'Why Choose Us', 'home', 'features', 'heading', 'Features section heading'],
-            ['home.features.subheading', 'Industry-Leading Technology', 'home', 'features', 'text', 'Features section subheading'],
+            // ========== HOME PAGE - FEATURES SECTION ==========
+            ['home.features.heading', 'Why Choose Us', 'home', 'features', 'heading', 'Features section badge'],
+            ['home.features.subheading', 'Industry-Leading Technology', 'home', 'features', 'heading', 'Features section title'],
             ['home.features.item1.title', 'Multi-Device Support', 'home', 'features', 'heading', 'Feature 1 title'],
             ['home.features.item1.description', 'Works seamlessly across smartphones, tablets, and wearables', 'home', 'features', 'paragraph', 'Feature 1 description'],
             ['home.features.item2.title', 'Real-Time Tracking', 'home', 'features', 'heading', 'Feature 2 title'],
@@ -207,20 +201,25 @@ class DatabaseSeeder {
             ['home.features.item3.title', 'Secure & Reliable', 'home', 'features', 'heading', 'Feature 3 title'],
             ['home.features.item3.description', 'Enterprise-grade security for your data and privacy', 'home', 'features', 'paragraph', 'Feature 3 description'],
 
-            // Home Page - About Section
+            // ========== HOME PAGE - ABOUT SECTION ==========
             ['home.about.heading', 'About MAX1ON1FITNESS', 'home', 'about', 'heading', 'About section heading'],
             ['home.about.description', 'We are a one-stop shop for multi-device software and hardware solutions for the sports industry. Our mission is to deliver innovative, reliable, and user-friendly fitness technology.', 'home', 'about', 'paragraph', 'About section description'],
 
-            // Home Page - Contact Section
-            ['home.contact.heading', 'Get In Touch', 'home', 'contact', 'heading', 'Contact section heading'],
-            ['home.contact.subheading', 'Ready to transform your fitness journey?', 'home', 'contact', 'text', 'Contact section subheading'],
+            // ========== HOME PAGE - CONTACT SECTION ==========
+            ['home.contact.heading', 'Get In Touch', 'home', 'contact', 'heading', 'Contact section badge'],
+            ['home.contact.subheading', 'Ready to transform your fitness journey?', 'home', 'contact', 'heading', 'Contact section title'],
             ['home.contact.name_label', 'Name', 'home', 'contact', 'text', 'Contact form name label'],
             ['home.contact.email_label', 'Email', 'home', 'contact', 'text', 'Contact form email label'],
             ['home.contact.message_label', 'Message', 'home', 'contact', 'text', 'Contact form message label'],
             ['home.contact.submit_button', 'Send Message', 'home', 'contact', 'button', 'Contact form submit button'],
 
-            // Home Page - Footer
-            ['home.footer.copyright', '© 2024 MAX1ON1FITNESS. All rights reserved.', 'home', 'footer', 'text', 'Footer copyright text']
+            // ========== HOME PAGE - FOOTER ==========
+            ['home.footer.copyright', '© 2024 MAX1ON1FITNESS. All rights reserved.', 'home', 'footer', 'text', 'Footer copyright text'],
+
+            // ========== DASHBOARD ==========
+            ['dashboard.page.title', 'Admin Dashboard - MAX1ON1FITNESS', 'dashboard', 'page', 'heading', 'Dashboard page title'],
+            ['dashboard.users.page.title', 'User Management - MAX1ON1FITNESS', 'dashboard', 'page', 'heading', 'Users page title'],
+            ['dashboard.content.page.title', 'Content Management - MAX1ON1FITNESS', 'dashboard', 'page', 'heading', 'Content management page title']
         ];
 
         foreach ($contents as $content) {
@@ -234,9 +233,13 @@ class DatabaseSeeder {
                      VALUES (?, ?, ?, ?, ?, ?)"
                 );
                 $stmt->execute($content);
+            } else {
+                // Update existing content if value is different
+                $stmt = $this->conn->prepare("UPDATE site_content SET content_value = ?, description = ? WHERE content_key = ?");
+                $stmt->execute([$content[1], $content[5], $content[0]]);
             }
         }
-        $this->output("✓ Site content created");
+        $this->output("✓ Site content created/updated (" . count($contents) . " items)");
     }
 }
 

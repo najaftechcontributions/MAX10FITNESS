@@ -91,7 +91,7 @@
             Sorry, the page you're looking for doesn't exist or has been moved.
         </p>
         <div class="error-actions">
-            <a href="../index.php" class="btn btn-primary">Go Home</a>
+            <a href="/" class="btn btn-primary">Go Home</a>
             <a href="javascript:history.back()" class="btn btn-secondary">Go Back</a>
         </div>
     </div>

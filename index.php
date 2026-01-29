@@ -1,8 +1,8 @@
 <?php
 /**
  * Main Entry Point
- * Redirects to homepage
+ * Redirects to router for proper routing
  */
-header("Location: pages/home.php");
+header("Location: /");
 exit();
 ?>
