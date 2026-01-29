@@ -32,11 +32,6 @@ require_once __DIR__ . '/../includes/header.php';
                 <div class="hero-cta">
                     <a href="#products" class="btn-primary"><?php echo SiteContent::getValue($db, 'home.hero.cta_button', 'Get Started'); ?></a>
                     <a href="#features" class="btn-secondary">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M8 5V19M8 19L12 15M8 19L4 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="16" cy="12" r="6" stroke="currentColor" stroke-width="2"/>
-                            <path d="M16 10V14M14 12H18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
                         <?php echo SiteContent::getValue($db, 'home.hero.learn_more_button', 'Learn More'); ?>
                     </a>
                 </div>
@@ -94,8 +89,8 @@ require_once __DIR__ . '/../includes/header.php';
             <div class="product-card">
                 <div class="product-icon">
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                        <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="12" cy="12" r="10" stroke="#ffffff" stroke-width="2"/>
+                        <path d="M12 6V12L16 14" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                 </div>
                 <h3>Wearable Heart Rate Monitor</h3>
@@ -112,8 +107,8 @@ require_once __DIR__ . '/../includes/header.php';
                 <div class="featured-badge">Popular</div>
                 <div class="product-icon">
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-                        <rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
-                        <path d="M12 18H12.01M9 6H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <rect x="5" y="2" width="14" height="20" rx="2" stroke="#ffffff" stroke-width="2"/>
+                        <path d="M12 18H12.01M9 6H15" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                 </div>
                 <h3>Integrated Bluetooth Apps</h3>
@@ -129,9 +124,9 @@ require_once __DIR__ . '/../includes/header.php';
             <div class="product-card">
                 <div class="product-icon">
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-                        <circle cx="6" cy="19" r="3" stroke="currentColor" stroke-width="2"/>
-                        <circle cx="18" cy="19" r="3" stroke="currentColor" stroke-width="2"/>
-                        <path d="M6 19V11L8 5H16L18 11V19M10 5V11M14 5V11" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="6" cy="19" r="3" stroke="#ffffff" stroke-width="2"/>
+                        <circle cx="18" cy="19" r="3" stroke="#ffffff" stroke-width="2"/>
+                        <path d="M6 19V11L8 5H16L18 11V19M10 5V11M14 5V11" stroke="#ffffff" stroke-width="2"/>
                     </svg>
                 </div>
                 <h3>Cycling Monitor</h3>
@@ -147,7 +142,7 @@ require_once __DIR__ . '/../includes/header.php';
             <div class="product-card">
                 <div class="product-icon">
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-                        <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"/>
                     </svg>
                 </div>
                 <h3>Full-Workout Tracker</h3>
@@ -163,8 +158,8 @@ require_once __DIR__ . '/../includes/header.php';
             <div class="product-card">
                 <div class="product-icon">
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-                        <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
-                        <path d="M7 10H11M7 14H11M15 10H17M15 14H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <rect x="3" y="6" width="18" height="12" rx="2" stroke="#ffffff" stroke-width="2"/>
+                        <path d="M7 10H11M7 14H11M15 10H17M15 14H17" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                 </div>
                 <h3>Sports Software Suite</h3>
@@ -180,7 +175,7 @@ require_once __DIR__ . '/../includes/header.php';
             <div class="product-card">
                 <div class="product-icon">
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-                        <path d="M20 7L12 3L4 7M20 7L12 11M20 7V17L12 21M12 11L4 7M12 11V21M4 7V17L12 21" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M20 7L12 3L4 7M20 7L12 11M20 7V17L12 21M12 11L4 7M12 11V21M4 7V17L12 21" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"/>
                     </svg>
                 </div>
                 <h3>Bespoke Development</h3>

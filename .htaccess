@@ -4,6 +4,9 @@ RewriteEngine On
 # Prevent direct access to certain directories
 RewriteRule ^(config|database|includes|models)/ - [F,L]
 
+# Test endpoint for mod_rewrite
+RewriteRule ^test-rewrite-check$ test-rewrite.php?route=test-rewrite-check [L]
+
 # Redirect all requests to router.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
