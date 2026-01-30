@@ -6,16 +6,16 @@
 
 :root {
     /* Primary Brand Colors */
-    --primary-purple: #667eea;
-    --primary-purple-dark: #764ba2;
-    --secondary-pink: #f093fb;
-    --secondary-red: #f5576c;
+    --primary-branding: #667eea;
+    --primary-branding-dark: #764ba2;
+    --secondary-light: #f093fb;
+    --secondary-dark: #f5576c;
     --accent-blue: #4facfe;
     --accent-cyan: #00f2fe;
 
     /* Gradients */
-    --primary-gradient: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-purple-dark) 100%);
-    --secondary-gradient: linear-gradient(135deg, var(--secondary-pink) 0%, var(--secondary-red) 100%);
+    --primary-gradient: linear-gradient(135deg, var(--primary-branding) 0%, var(--primary-branding-dark) 100%);
+    --secondary-gradient: linear-gradient(135deg, var(--secondary-light) 0%, var(--secondary-dark) 100%);
     --accent-gradient: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
 
     /* Light Gradient Overlays */
@@ -240,7 +240,7 @@ body {
 .hero-orb.orb-1 {
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, var(--primary-purple), transparent);
+    background: radial-gradient(circle, var(--primary-branding), transparent);
     top: -250px;
     left: -250px;
 }
@@ -248,7 +248,7 @@ body {
 .hero-orb.orb-2 {
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, var(--secondary-red), transparent);
+    background: radial-gradient(circle, var(--secondary-dark), transparent);
     bottom: -200px;
     right: -200px;
     animation-delay: 7s;
@@ -629,12 +629,12 @@ section {
     content: '✓';
     position: absolute;
     left: 0;
-    color: var(--primary-purple);
+    color: var(--primary-branding);
     font-weight: 700;
 }
 
 .product-link {
-    color: var(--primary-purple);
+    color: var(--primary-branding);
     text-decoration: none;
     font-weight: 600;
     font-size: 15px;
@@ -652,7 +652,7 @@ section {
 
 .product-link:hover {
     gap: 10px;
-    color: var(--primary-purple-dark);
+    color: var(--primary-branding-dark);
 }
 
 .product-link:hover::after {
@@ -861,7 +861,7 @@ section {
 .form-group textarea:focus,
 .form-control:focus {
     outline: none;
-    border-color: var(--primary-purple);
+    border-color: var(--primary-branding);
     box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
     transform: translateY(-2px);
 }
@@ -1219,14 +1219,14 @@ body.auth-page {
 
 .forgot-link {
     font-size: 14px;
-    color: var(--primary-purple);
+    color: var(--primary-branding);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .forgot-link:hover {
-    color: var(--primary-purple-dark);
+    color: var(--primary-branding-dark);
 }
 
 .auth-footer {
@@ -1240,14 +1240,14 @@ body.auth-page {
 }
 
 .auth-footer a {
-    color: var(--primary-purple);
+    color: var(--primary-branding);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .auth-footer a:hover {
-    color: var(--primary-purple-dark);
+    color: var(--primary-branding-dark);
 }
 
 .animated-background {
@@ -1272,7 +1272,7 @@ body.auth-page {
 .orb-1 {
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, var(--primary-purple), transparent);
+    background: radial-gradient(circle, var(--primary-branding), transparent);
     top: -200px;
     left: -200px;
 }
@@ -1280,7 +1280,7 @@ body.auth-page {
 .orb-2 {
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, var(--secondary-red), transparent);
+    background: radial-gradient(circle, var(--secondary-dark), transparent);
     bottom: -250px;
     right: -250px;
     animation-delay: 5s;
@@ -1365,8 +1365,8 @@ body.admin-page {
 .admin-menu li a:hover,
 .admin-menu li a.active {
     background: var(--primary-gradient-light);
-    border-left: 3px solid var(--primary-purple);
-    color: var(--primary-purple);
+    border-left: 3px solid var(--primary-branding);
+    color: var(--primary-branding);
 }
 
 .admin-menu-icon {
@@ -1459,12 +1459,12 @@ body.admin-page {
 
 .stat-card-icon.blue {
     background: rgba(102, 126, 234, 0.1);
-    color: var(--primary-purple);
+    color: var(--primary-branding);
 }
 
 .stat-card-icon.purple {
     background: rgba(118, 75, 162, 0.1);
-    color: var(--primary-purple-dark);
+    color: var(--primary-branding-dark);
 }
 
 .stat-card-icon.green {
@@ -1606,7 +1606,7 @@ body.admin-page {
 
 .btn-secondary {
     background: rgba(102, 126, 234, 0.1);
-    color: var(--primary-purple);
+    color: var(--primary-branding);
 }
 
 .btn-secondary:hover {
@@ -1645,7 +1645,7 @@ body.admin-page {
 
 .badge-admin {
     background: rgba(102, 126, 234, 0.1);
-    color: var(--primary-purple);
+    color: var(--primary-branding);
 }
 
 .badge-user {
@@ -1909,7 +1909,7 @@ body.admin-page {
 
 .cta-actions .btn-primary {
     background: var(--white);
-    color: var(--primary-purple);
+    color: var(--primary-branding);
 }
 
 .cta-actions .btn-primary:hover {
@@ -2520,7 +2520,7 @@ body.admin-page {
 
 .cta-actions .btn-primary {
     background: var(--white);
-    color: var(--primary-purple);
+    color: var(--primary-branding);
     position: relative;
 }
 
@@ -3029,7 +3029,7 @@ body.admin-page {
     .admin-menu li a:hover,
     .admin-menu li a.active {
         border-left: none;
-        border-top: 3px solid var(--primary-purple);
+        border-top: 3px solid var(--primary-branding);
     }
 
     .admin-menu-icon {
