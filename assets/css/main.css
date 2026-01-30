@@ -5,20 +5,61 @@
 }
 
 :root {
-    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    /* Primary Brand Colors */
+    --primary-purple: #667eea;
+    --primary-purple-dark: #764ba2;
+    --secondary-pink: #f093fb;
+    --secondary-red: #f5576c;
+    --accent-blue: #4facfe;
+    --accent-cyan: #00f2fe;
+
+    /* Gradients */
+    --primary-gradient: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-purple-dark) 100%);
+    --secondary-gradient: linear-gradient(135deg, var(--secondary-pink) 0%, var(--secondary-red) 100%);
+    --accent-gradient: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
+
+    /* Light Gradient Overlays */
+    --primary-gradient-light: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+
+    /* Neutral Colors */
     --dark-color: #1a1a2e;
     --text-dark: #2d3436;
+    --text-medium: #666;
     --text-light: #636e72;
+    --gray-300: #333;
+    --gray-400: #a0aec0;
+    --gray-500: #f1f1f1;
+    --gray-600: #f3f4f6;
     --bg-light: #f8f9fa;
     --white: #ffffff;
+    --black: #000000;
     --border-color: #e0e0e0;
+
+    /* Status Colors */
+    --success-color: #00b894;
+    --success-green: #34d399;
+    --error-color: #ff4655;
+    --error-red: #ef4444;
+    --warning-orange: #fb923c;
+    --info-yellow: #fbbf24;
+
+    /* Shadows */
     --shadow-sm: 0 4px 20px -2px rgba(0, 0, 0, 0.2);
     --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.15);
-    --success-color: #00b894;
-    --error-color: #ff4655;
+
+    /* Opacity Overlays */
+    --overlay-white-5: rgba(255, 255, 255, 0.05);
+    --overlay-white-10: rgba(255, 255, 255, 0.1);
+    --overlay-white-15: rgba(255, 255, 255, 0.15);
+    --overlay-white-20: rgba(255, 255, 255, 0.2);
+    --overlay-white-70: rgba(255, 255, 255, 0.7);
+    --overlay-white-80: rgba(255, 255, 255, 0.8);
+    --overlay-white-90: rgba(255, 255, 255, 0.9);
+    --overlay-white-95: rgba(255, 255, 255, 0.95);
+    --overlay-black-5: rgba(0, 0, 0, 0.05);
+    --overlay-black-10: rgba(0, 0, 0, 0.1);
+    --overlay-black-20: rgba(0, 0, 0, 0.2);
 }
 
 html {
@@ -43,9 +84,9 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--overlay-white-95);
     backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 20px var(--overlay-black-5);
     z-index: 1000;
     transition: all 0.3s ease;
 }
@@ -176,7 +217,7 @@ body {
     padding: 120px 0 80px;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    background: var(--primary-gradient-light);
 }
 
 .hero-background {
@@ -199,7 +240,7 @@ body {
 .hero-orb.orb-1 {
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, #667eea, transparent);
+    background: radial-gradient(circle, var(--primary-purple), transparent);
     top: -250px;
     left: -250px;
 }
@@ -207,7 +248,7 @@ body {
 .hero-orb.orb-2 {
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, #f5576c, transparent);
+    background: radial-gradient(circle, var(--secondary-red), transparent);
     bottom: -200px;
     right: -200px;
     animation-delay: 7s;
@@ -216,7 +257,7 @@ body {
 .hero-orb.orb-3 {
     width: 350px;
     height: 350px;
-    background: radial-gradient(circle, #00f2fe, transparent);
+    background: radial-gradient(circle, var(--accent-cyan), transparent);
     top: 40%;
     right: 20%;
     animation-delay: 14s;
@@ -527,7 +568,7 @@ section {
 }
 
 .product-card.featured {
-    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    background: var(--primary-gradient-light);
     border: 2px solid #667eea30;
 }
 
@@ -588,12 +629,12 @@ section {
     content: '✓';
     position: absolute;
     left: 0;
-    color: #667eea;
+    color: var(--primary-purple);
     font-weight: 700;
 }
 
 .product-link {
-    color: #667eea;
+    color: var(--primary-purple);
     text-decoration: none;
     font-weight: 600;
     font-size: 15px;
@@ -611,7 +652,7 @@ section {
 
 .product-link:hover {
     gap: 10px;
-    color: #764ba2;
+    color: var(--primary-purple-dark);
 }
 
 .product-link:hover::after {
@@ -820,7 +861,7 @@ section {
 .form-group textarea:focus,
 .form-control:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: var(--primary-purple);
     box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
     transform: translateY(-2px);
 }
@@ -828,14 +869,14 @@ section {
 .form-group input::placeholder,
 .form-group textarea::placeholder,
 .form-control::placeholder {
-    color: #a0aec0;
+    color: var(--gray-400);
     opacity: 0.7;
 }
 
 .form-group input:disabled,
 .form-group textarea:disabled,
 .form-control:disabled {
-    background-color: #f3f4f6;
+    background-color: var(--gray-600);
     cursor: not-allowed;
     opacity: 0.6;
 }
@@ -897,7 +938,7 @@ textarea.form-control {
 }
 
 .footer-brand p {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--overlay-white-70);
     margin-top: 15px;
     line-height: 1.7;
 }
@@ -923,7 +964,7 @@ textarea.form-control {
 }
 
 .footer-column ul li a {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--overlay-white-70);
     text-decoration: none;
     font-size: 14px;
     transition: all 0.3s ease;
@@ -947,7 +988,7 @@ textarea.form-control {
 
 body.auth-page {
     min-height: 100vh;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--primary-gradient);
     overflow-x: hidden;
     position: relative;
 }
@@ -961,7 +1002,7 @@ body.auth-page {
 }
 
 .auth-left {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--overlay-white-5);
     backdrop-filter: blur(10px);
     padding: 60px;
     display: flex;
@@ -1024,11 +1065,11 @@ body.auth-page {
 }
 
 .feature-item {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--overlay-white-10);
     backdrop-filter: blur(10px);
     padding: 25px;
     border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--overlay-white-20);
     transition: all 0.4s ease;
     animation: fadeInLeft 0.8s ease;
 }
@@ -1047,7 +1088,7 @@ body.auth-page {
 
 .feature-item:hover {
     transform: translateX(10px);
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--overlay-white-15);
 }
 
 .feature-icon {
@@ -1068,7 +1109,7 @@ body.auth-page {
 }
 
 .auth-right {
-    background: #fff;
+    background: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1178,14 +1219,14 @@ body.auth-page {
 
 .forgot-link {
     font-size: 14px;
-    color: #667eea;
+    color: var(--primary-purple);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .forgot-link:hover {
-    color: #764ba2;
+    color: var(--primary-purple-dark);
 }
 
 .auth-footer {
@@ -1199,14 +1240,14 @@ body.auth-page {
 }
 
 .auth-footer a {
-    color: #667eea;
+    color: var(--primary-purple);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .auth-footer a:hover {
-    color: #764ba2;
+    color: var(--primary-purple-dark);
 }
 
 .animated-background {
@@ -1231,7 +1272,7 @@ body.auth-page {
 .orb-1 {
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, #667eea, transparent);
+    background: radial-gradient(circle, var(--primary-purple), transparent);
     top: -200px;
     left: -200px;
 }
@@ -1239,7 +1280,7 @@ body.auth-page {
 .orb-2 {
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, #f5576c, transparent);
+    background: radial-gradient(circle, var(--secondary-red), transparent);
     bottom: -250px;
     right: -250px;
     animation-delay: 5s;
@@ -1248,7 +1289,7 @@ body.auth-page {
 .orb-3 {
     width: 350px;
     height: 350px;
-    background: radial-gradient(circle, #00f2fe, transparent);
+    background: radial-gradient(circle, var(--accent-cyan), transparent);
     top: 50%;
     left: 50%;
     animation-delay: 10s;
@@ -1271,7 +1312,7 @@ body.auth-page {
 }
 
 body.admin-page {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--primary-gradient);
     min-height: 100vh;
 }
 
@@ -1282,10 +1323,10 @@ body.admin-page {
 
 .admin-sidebar {
     width: 260px;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--overlay-white-95);
     backdrop-filter: blur(10px);
     padding: 2rem 0;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 0 10px var(--overlay-black-10);
 }
 
 .admin-brand {
@@ -1295,7 +1336,7 @@ body.admin-page {
 
 .admin-brand h2 {
     font-size: 1.5rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--primary-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1316,16 +1357,16 @@ body.admin-page {
     align-items: center;
     gap: 0.75rem;
     padding: 0.875rem 1.5rem;
-    color: #333;
+    color: var(--gray-300);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .admin-menu li a:hover,
 .admin-menu li a.active {
-    background: linear-gradient(90deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-    border-left: 3px solid #667eea;
-    color: #667eea;
+    background: var(--primary-gradient-light);
+    border-left: 3px solid var(--primary-purple);
+    color: var(--primary-purple);
 }
 
 .admin-menu-icon {
@@ -1339,7 +1380,7 @@ body.admin-page {
 }
 
 .admin-header {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--overlay-white-95);
     backdrop-filter: blur(10px);
     padding: 1.5rem 2rem;
     border-radius: 15px;
@@ -1347,12 +1388,12 @@ body.admin-page {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px var(--overlay-black-10);
 }
 
 .admin-header h1 {
     font-size: 1.875rem;
-    color: #333;
+    color: var(--gray-300);
 }
 
 .admin-user-info {
@@ -1365,11 +1406,11 @@ body.admin-page {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--primary-gradient);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--white);
     font-weight: 600;
 }
 
@@ -1381,11 +1422,11 @@ body.admin-page {
 }
 
 .stat-card {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--overlay-white-95);
     backdrop-filter: blur(10px);
     padding: 1.5rem;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px var(--overlay-black-10);
     transition: transform 0.3s ease;
 }
 
@@ -1401,7 +1442,7 @@ body.admin-page {
 }
 
 .stat-card-title {
-    color: #666;
+    color: var(--text-medium);
     font-size: 0.875rem;
     font-weight: 500;
 }
@@ -1418,17 +1459,17 @@ body.admin-page {
 
 .stat-card-icon.blue {
     background: rgba(102, 126, 234, 0.1);
-    color: #667eea;
+    color: var(--primary-purple);
 }
 
 .stat-card-icon.purple {
     background: rgba(118, 75, 162, 0.1);
-    color: #764ba2;
+    color: var(--primary-purple-dark);
 }
 
 .stat-card-icon.green {
     background: rgba(52, 211, 153, 0.1);
-    color: #34d399;
+    color: var(--success-green);
 }
 
 .stat-card-icon.orange {
@@ -1439,15 +1480,15 @@ body.admin-page {
 .stat-card-value {
     font-size: 2rem;
     font-weight: 700;
-    color: #333;
+    color: var(--gray-300);
 }
 
 .content-card {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--overlay-white-95);
     backdrop-filter: blur(10px);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px var(--overlay-black-10);
     margin-bottom: 2rem;
 }
 
@@ -1463,7 +1504,7 @@ body.admin-page {
 .content-card-title {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #333;
+    color: var(--gray-300);
 }
 
 .admin-table {
@@ -1475,13 +1516,13 @@ body.admin-page {
     text-align: left;
     padding: 1rem;
     font-weight: 600;
-    color: #666;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    color: var(--text-medium);
+    border-bottom: 2px solid var(--overlay-black-10);
 }
 
 .admin-table tbody td {
     padding: 1rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--overlay-black-5);
 }
 
 .admin-table tbody tr {
@@ -1507,12 +1548,12 @@ body.admin-page {
 }
 
 .content-card::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: var(--gray-500);
     border-radius: 10px;
 }
 
 .content-card::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--primary-gradient);
     border-radius: 10px;
 }
 
@@ -1542,7 +1583,7 @@ body.admin-page {
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--overlay-white-20);
     transform: translate(-50%, -50%);
     transition: width 0.6s, height 0.6s;
 }
@@ -1565,7 +1606,7 @@ body.admin-page {
 
 .btn-secondary {
     background: rgba(102, 126, 234, 0.1);
-    color: #667eea;
+    color: var(--primary-purple);
 }
 
 .btn-secondary:hover {
@@ -1574,7 +1615,7 @@ body.admin-page {
 
 .btn-danger {
     background: rgba(239, 68, 68, 0.1);
-    color: #ef4444;
+    color: var(--error-red);
 }
 
 .btn-danger:hover {
@@ -1583,7 +1624,7 @@ body.admin-page {
 
 .btn-success {
     background: rgba(52, 211, 153, 0.1);
-    color: #34d399;
+    color: var(--success-green);
 }
 
 .btn-success:hover {
@@ -1604,12 +1645,12 @@ body.admin-page {
 
 .badge-admin {
     background: rgba(102, 126, 234, 0.1);
-    color: #667eea;
+    color: var(--primary-purple);
 }
 
 .badge-user {
     background: rgba(52, 211, 153, 0.1);
-    color: #34d399;
+    color: var(--success-green);
 }
 
 @keyframes fadeInUp {
@@ -1671,7 +1712,7 @@ body.admin-page {
     padding: 120px 0 80px;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    background: var(--primary-gradient-light);
 }
 
 .hero-content-home {
@@ -1771,7 +1812,7 @@ body.admin-page {
 }
 
 .testimonial-stars {
-    color: #fbbf24;
+    color: var(--info-yellow);
     font-size: 20px;
     margin-bottom: 20px;
 }
@@ -1817,7 +1858,7 @@ body.admin-page {
 
 /* CTA Section */
 .cta-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--primary-gradient);
     color: var(--white);
     text-align: center;
     padding: 100px 0;
@@ -1868,7 +1909,7 @@ body.admin-page {
 
 .cta-actions .btn-primary {
     background: var(--white);
-    color: #667eea;
+    color: var(--primary-purple);
 }
 
 .cta-actions .btn-primary:hover {
@@ -1876,7 +1917,7 @@ body.admin-page {
 }
 
 .cta-actions .btn-secondary {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--overlay-white-20);
     color: var(--white);
     border-color: rgba(255, 255, 255, 0.5);
 }
@@ -1899,7 +1940,7 @@ body.admin-page {
     padding: 120px 0 80px;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    background: var(--primary-gradient-light);
 }
 
 .hero-content-home {
@@ -1961,7 +2002,7 @@ body.admin-page {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    background: var(--primary-gradient-light);
 }
 
 .image-caption {
@@ -1974,7 +2015,7 @@ body.admin-page {
 
 .about-hero-section {
     padding: 120px 0 60px;
-    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    background: var(--primary-gradient-light);
 }
 
 .page-header-about {
@@ -2054,7 +2095,7 @@ body.admin-page {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    background: var(--primary-gradient-light);
 }
 
 .features-list-about {
@@ -2111,7 +2152,7 @@ body.admin-page {
     display: flex;
     align-items: center;
     padding: 120px 0 80px;
-    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    background: var(--primary-gradient-light);
 }
 
 .partner-login-wrapper {
@@ -2230,7 +2271,7 @@ body.admin-page {
 
 .contact-hero-section {
     padding: 120px 0 60px;
-    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    background: var(--primary-gradient-light);
 }
 
 .page-header-contact {
@@ -2371,7 +2412,7 @@ body.admin-page {
 }
 
 .testimonial-stars {
-    color: #fbbf24;
+    color: var(--info-yellow);
     font-size: 18px;
     margin-bottom: 20px;
 }
@@ -2420,7 +2461,7 @@ body.admin-page {
 }
 
 .cta-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--primary-gradient);
     position: relative;
     overflow: hidden;
 }
@@ -2479,7 +2520,7 @@ body.admin-page {
 
 .cta-actions .btn-primary {
     background: var(--white);
-    color: #667eea;
+    color: var(--primary-purple);
     position: relative;
 }
 
@@ -2489,14 +2530,14 @@ body.admin-page {
 }
 
 .cta-actions .btn-secondary {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--overlay-white-10);
     border-color: var(--white);
     color: var(--white);
     backdrop-filter: blur(10px);
 }
 
 .cta-actions .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--overlay-white-20);
     border-color: var(--white);
     color: var(--white);
 }
@@ -2830,7 +2871,7 @@ body.admin-page {
         flex-direction: column;
         padding: 80px 30px 30px;
         gap: 20px;
-        box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
+        box-shadow: 2px 0 20px var(--overlay-black-10);
         transition: left 0.3s ease;
         z-index: 999;
     }
@@ -2848,7 +2889,7 @@ body.admin-page {
         background: var(--white);
         flex-direction: column;
         padding: 20px;
-        box-shadow: -2px 0 20px rgba(0, 0, 0, 0.1);
+        box-shadow: -2px 0 20px var(--overlay-black-10);
         transition: right 0.3s ease;
         z-index: 999;
     }
@@ -2959,7 +3000,7 @@ body.admin-page {
         bottom: 0;
         left: 0;
         z-index: 100;
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 -2px 10px var(--overlay-black-10);
     }
 
     .admin-brand {
@@ -2988,7 +3029,7 @@ body.admin-page {
     .admin-menu li a:hover,
     .admin-menu li a.active {
         border-left: none;
-        border-top: 3px solid #667eea;
+        border-top: 3px solid var(--primary-purple);
     }
 
     .admin-menu-icon {
