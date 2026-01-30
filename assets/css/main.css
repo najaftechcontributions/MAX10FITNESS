@@ -10,13 +10,13 @@
     --primary-branding-dark: #764ba2;
     --secondary-light: #f093fb;
     --secondary-dark: #f5576c;
-    --accent-blue: #4facfe;
-    --accent-cyan: #00f2fe;
+    --accent-one: #4facfe;
+    --accent-second: #00f2fe;
 
     /* Gradients */
     --primary-gradient: linear-gradient(135deg, var(--primary-branding) 0%, var(--primary-branding-dark) 100%);
     --secondary-gradient: linear-gradient(135deg, var(--secondary-light) 0%, var(--secondary-dark) 100%);
-    --accent-gradient: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
+    --accent-gradient: linear-gradient(135deg, var(--accent-one) 0%, var(--accent-second) 100%);
 
     /* Light Gradient Overlays */
     --primary-gradient-light: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
@@ -257,7 +257,7 @@ body {
 .hero-orb.orb-3 {
     width: 350px;
     height: 350px;
-    background: radial-gradient(circle, var(--accent-cyan), transparent);
+    background: radial-gradient(circle, var(--accent-second), transparent);
     top: 40%;
     right: 20%;
     animation-delay: 14s;
@@ -1289,7 +1289,7 @@ body.auth-page {
 .orb-3 {
     width: 350px;
     height: 350px;
-    background: radial-gradient(circle, var(--accent-cyan), transparent);
+    background: radial-gradient(circle, var(--accent-second), transparent);
     top: 50%;
     left: 50%;
     animation-delay: 10s;
