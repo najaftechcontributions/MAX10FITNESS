@@ -174,7 +174,6 @@ require_once __DIR__ . '/../includes/header.php';
                     <div class="contact-info-icon">📧</div>
                     <h3 class="contact-info-title">Email Us</h3>
                     <p class="contact-info-text">info@max1on1fitness.com</p>
-                    <p class="contact-info-text">support@max1on1fitness.com</p>
                 </div>
 
                 <div class="contact-info-card">

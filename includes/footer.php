@@ -13,10 +13,10 @@
                     <div class="footer-column">
                         <h4><?php echo SiteContent::getValue($db ?? null, 'footer.products.title', 'Products'); ?></h4>
                         <ul>
-                            <li><a href="/">Heart Rate Monitor</a></li>
-                            <li><a href="/">Mobile Apps</a></li>
-                            <li><a href="/">Cycling Tracker</a></li>
-                            <li><a href="/">Workout Tracker</a></li>
+                            <li><a href="/">AI2-GYM</a></li>
+                            <li><a href="/">AI3-GYM</a></li>
+                            <li><a href="/">VRS-Home</a></li>
+                            <li><a href="/">VRS-Coach</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -25,13 +25,12 @@
                             <li><a href="/about">About Us</a></li>
                             <li><a href="/contact">Contact</a></li>
                             <li><a href="/partner">Partner</a></li>
-                            <li><a href="#">Careers</a></li>
+                            <!-- <li><a href="#">Careers</a></li> -->
                         </ul>
                     </div>
                     <div class="footer-column">
                         <h4><?php echo SiteContent::getValue($db ?? null, 'footer.support.title', 'Support'); ?></h4>
                         <ul>
-                            <li><a href="#">Help Center</a></li>
                             <li><a href="/contact">Contact Us</a></li>
                             <li><a href="#">Privacy Policy</a></li>
                             <li><a href="#">Terms of Service</a></li>
