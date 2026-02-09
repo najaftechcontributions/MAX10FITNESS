@@ -179,15 +179,15 @@ require_once __DIR__ . '/../includes/header.php';
                 <div class="contact-info-card">
                     <div class="contact-info-icon">📞</div>
                     <h3 class="contact-info-title">Call Us</h3>
-                    <p class="contact-info-text">+1 (555) 123-4567</p>
+                    <p class="contact-info-text">02039836166</p>
                     <p class="contact-info-text">Mon-Fri, 9am-6pm EST</p>
                 </div>
 
                 <div class="contact-info-card">
                     <div class="contact-info-icon">📍</div>
                     <h3 class="contact-info-title">Visit Us</h3>
-                    <p class="contact-info-text">123 Fitness Avenue</p>
-                    <p class="contact-info-text">New York, NY 10001</p>
+                    <p class="contact-info-text">20 Wenlock Road, London,</p>
+                    <p class="contact-info-text">England, N1 7GU</p>
                 </div>
 
                 <div class="contact-info-card">

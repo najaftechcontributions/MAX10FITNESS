@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p><?php echo SiteContent::getValue($db ?? null, 'footer.copyright', '© 2024 MAX1ON1FITNESS. All rights reserved.'); ?></p>
+                <p><?php echo SiteContent::getValue($db ?? null, 'footer.copyright', '© 2026 MAX1ON1FITNESS. All rights reserved.'); ?></p>
             </div>
         </div>
     </footer>

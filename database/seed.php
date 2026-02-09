@@ -164,7 +164,7 @@ class DatabaseSeeder {
             ['footer.products.title', 'Products', 'global', 'footer', 'heading', 'Products column title'],
             ['footer.company.title', 'Company', 'global', 'footer', 'heading', 'Company column title'],
             ['footer.support.title', 'Support', 'global', 'footer', 'heading', 'Support column title'],
-            ['footer.copyright', '© 2024 MAX1ON1FITNESS. All rights reserved.', 'global', 'footer', 'text', 'Footer copyright text'],
+            ['footer.copyright', '© 2026 MAX1ON1FITNESS. All rights reserved.', 'global', 'footer', 'text', 'Footer copyright text'],
 
             // ========== LOGIN PAGE ==========
             ['login.page.title', 'Login - MAX1ON1FITNESS', 'login', 'page', 'heading', 'Page title for login'],
