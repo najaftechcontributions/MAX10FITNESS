@@ -280,22 +280,22 @@ require_once __DIR__ . '/../includes/header.php';
             <div class="stats-dashboard">
                 <div class="dashboard-card">
                     <h4>Active Users</h4>
-                    <div class="stat-value">2.5M+</div>
+                    <!-- <div class="stat-value">2.5M+</div> -->
                 </div>
 
                 <div class="dashboard-card">
                     <h4>Workouts Tracked</h4>
-                    <div class="stat-value">150M+</div>
+                    <!-- <div class="stat-value">150M+</div> -->
                 </div>
 
                 <div class="dashboard-card">
                     <h4>Partner Gyms</h4>
-                    <div class="stat-value">3,200+</div>
+                    <!-- <div class="stat-value">3,200+</div> -->
                 </div>
 
                 <div class="dashboard-card">
                     <h4>Countries</h4>
-                    <div class="stat-value">50+</div>
+                    <!-- <div class="stat-value">50+</div> -->
                 </div>
             </div>
         </div>
